@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Exo Browser",
+    "version": "1.0",
+    "description": "Automate you browser using AI..",
+    "permissions": [
+        "sidePanel"
+    ],
+    "side_panel": {
+        "default_path": "index.html"
+    },
+    "action": {
+        "default_icon": {
+            "16": "logo.png",
+            "48": "logo.png",
+            "128": "logo.png"
+        },
+        "default_title": "Exo Browser: Automate your browser with AI."
+    },
+    "host_permissions": [],
+    "background": {
+        "service_worker": "service-worker.js"
+    }
+}
