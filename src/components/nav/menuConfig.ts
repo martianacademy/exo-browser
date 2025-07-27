@@ -25,5 +25,5 @@ export const navMenuItems: NavMenuItemsType[] = [{
 {
     label: "Settings",
     icon: Settings,
-    to: ""
+    to: "/settings"
 }]

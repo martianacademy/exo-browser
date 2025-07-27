@@ -1,6 +1,8 @@
-import { HStack, IconButton, Spacer } from "@chakra-ui/react";
+import { Button, HStack, IconButton, Spacer } from "@chakra-ui/react";
 import { Logo } from "../Logo";
 import { navMenuItems } from "./menuConfig";
+import { ColorModeButton } from "../ui/color-mode";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
     return (
@@ -10,8 +12,8 @@ export const Nav = () => {
             <HStack>
                 {navMenuItems?.map((object, key) => {
                     return (
-                        <HStack key={key}>
-                            <IconButton
+                        <Link to={object?.to || ""} key={key}>
+                            <Button
                                 as={object?.icon}
                                 size="xs"
                                 variant={"surface"}
@@ -19,10 +21,21 @@ export const Nav = () => {
                                 _hover={{
                                     colorPalette: "teal"
                                 }}
-                            ></IconButton>
-                        </HStack>
+                                boxSize={8}
+                            ></Button>
+                        </Link>
                     );
                 })}
+                <IconButton
+                    size="xs"
+                    variant={"surface"}
+                    _hover={{
+                        colorPalette: "teal"
+                    }}
+                    boxSize={8}
+                >
+                    <ColorModeButton />
+                </IconButton>
             </HStack>
         </HStack>
     );
